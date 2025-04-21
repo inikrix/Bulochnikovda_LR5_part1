@@ -10,7 +10,11 @@ bool UserInput(string input) {
     // попытка
     try {
         // преобразование введенного значения в тип int
-        int number = stoi(input);
+        size_t pos;
+        int number = stoi(input, &pos);
+        if (pos != input.length()) return false;
+        if (number < 0) return false;
+        if (number < 0) return false;
         
     } 
     catch (...) { // если возникла ошибка в блоке try
